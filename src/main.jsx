@@ -25,7 +25,7 @@ const FALLBACK_DATA = {
   ],
   roadmap: [
     { date: "Mar 18", event: "Actualización ZUPRAL", status: "Hoy", importance: "Alta" },
-    { date: "Mar 20", event: "Equinoccio", status: "Próximo", importance: "Baja" },
+    { date: "Mar 20", event: "Equinoccio Primavera", status: "Próximo", importance: "Baja" },
     { date: "Mar 22", event: "Día del Agua", status: "Próximo", importance: "Media" },
     { date: "Mar 25", event: "Cumbre IA", status: "Planificación", importance: "Alta" },
     { date: "Mar 29", event: "Semana Santa", status: "Planificación", importance: "Alta" },
@@ -88,7 +88,7 @@ function App() {
         <section className="space-y-8">
           <div className="px-4 border-l-4 border-orange-500">
             <h2 className="text-2xl font-black text-white flex items-center gap-3"><Flame className="text-orange-500" size={28}/> WAR ROOM FEED</h2>
-            <p className="text-slate-500 text-sm font-medium italic">Monitor dinámico de los 10 temas con mayor tracción digital. Analiza la velocidad de propagación en tiempo real.</p>
+            <p className="text-slate-500 text-sm font-medium italic">Monitor dinámico de los 10 temas con mayor tracción digital.</p>
           </div>
           <div className="grid gap-4">
             {sortedTrends.map((t, i) => (
@@ -137,7 +137,7 @@ function App() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('[https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap)');
-        body { font-family: 'Space Grotesk', sans-serif; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; }
       `}} />
     </div>
   );
