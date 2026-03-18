@@ -12,9 +12,9 @@ const CATEGORIAS = ["Todos", "Cultura", "Tech", "Cine", "Deportes", "Gaming"];
 
 const FALLBACK_DATA = {
   trends: [
-    { id: 1, title: "GTA VI: Vice City Live", category: "Gaming", velocity: 98, sentiment: "Euforia", emotionIcon: "🔥", whyViral: "Filtraciones masivas sobre economía real.", keywords: ["GTAVI"], description: "Ecosistema online.", sources: [{title: "IGN", url: "#"}] },
+    { id: 1, title: "GTA VI: Vice City Live", category: "Gaming", velocity: 98, sentiment: "Euforia", emotionIcon: "🔥", whyViral: "Filtraciones masivas.", keywords: ["GTAVI"], description: "Ecosistema online.", sources: [{title: "IGN", url: "#"}] },
     { id: 2, title: "Apple Vision Air", category: "Tech", velocity: 96, sentiment: "Asombro", emotionIcon: "✨", whyViral: "Precio disruptivo.", keywords: ["VisionAir"], description: "Computación espacial.", sources: [{title: "TechCrunch", url: "#"}] },
-    { id: 3, title: "Mundial FIFA '26 Sedes", category: "Deportes", velocity: 92, sentiment: "Orgullo", emotionIcon: "⚽", whyViral: "Logística oficial confirmada.", keywords: ["FIFA"], description: "Impacto económico.", sources: [{title: "FIFA", url: "#"}] },
+    { id: 3, title: "Mundial FIFA '26 Sedes", category: "Deportes", velocity: 92, sentiment: "Orgullo", emotionIcon: "⚽", whyViral: "Logística oficial.", keywords: ["FIFA"], description: "Impacto económico.", sources: [{title: "FIFA", url: "#"}] },
     { id: 4, title: "Dune: Messiah Teaser", category: "Cine", velocity: 89, sentiment: "Solemne", emotionIcon: "🎬", whyViral: "Imágenes de Villeneuve.", keywords: ["Dune"], description: "Épica sci-fi.", sources: [{title: "Variety", url: "#"}] },
     { id: 5, title: "K-Pop Meta-Groups", category: "Cultura", velocity: 88, sentiment: "Curiosidad", emotionIcon: "🎤", whyViral: "Ídolos virtuales.", keywords: ["KPop"], description: "IA en música.", sources: [{title: "Billboard", url: "#"}] },
     { id: 6, title: "Neuralink Streaming", category: "Tech", velocity: 85, sentiment: "Sci-Fi", emotionIcon: "🧠", whyViral: "Música vía BCI.", keywords: ["Neuralink"], description: "Interfaz cerebro.", sources: [{title: "MIT", url: "#"}] },
@@ -24,7 +24,7 @@ const FALLBACK_DATA = {
     { id: 10, title: "Starship Mars", category: "Tech", velocity: 65, sentiment: "Heroico", emotionIcon: "🚀", whyViral: "Pruebas exitosas.", keywords: ["Mars"], description: "Colonización.", sources: [{title: "Space", url: "#"}] }
   ],
   roadmap: [
-    { date: "Mar 18", event: "Lanzamiento ZUPRAL", status: "Hoy", importance: "Alta" },
+    { date: "Mar 18", event: "Actualización ZUPRAL", status: "Hoy", importance: "Alta" },
     { date: "Mar 20", event: "Equinoccio", status: "Próximo", importance: "Baja" },
     { date: "Mar 22", event: "Día del Agua", status: "Próximo", importance: "Media" },
     { date: "Mar 25", event: "Cumbre IA", status: "Planificación", importance: "Alta" },
@@ -81,14 +81,14 @@ function App() {
       <main className="max-w-7xl mx-auto space-y-20">
         <section className="flex gap-3 justify-center flex-wrap">
           {CATEGORIAS.map(cat => (
-            <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2 rounded-full text-xs font-black uppercase border transition-all ${filter === cat ? 'bg-cyan-500 border-cyan-500 text-slate-950' : 'bg-slate-900/50 border-slate-800 text-slate-400 hover:border-slate-700'}`}>{cat}</button>
+            <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2 rounded-full text-xs font-black uppercase border transition-all ${filter === cat ? 'bg-cyan-500 border-cyan-500 text-slate-950 shadow-lg' : 'bg-slate-900/50 border-slate-800 text-slate-400 hover:border-slate-700'}`}>{cat}</button>
           ))}
         </section>
 
         <section className="space-y-8">
           <div className="px-4 border-l-4 border-orange-500">
             <h2 className="text-2xl font-black text-white flex items-center gap-3"><Flame className="text-orange-500" size={28}/> WAR ROOM FEED</h2>
-            <p className="text-slate-500 text-sm font-medium italic">Monitor dinámico de los 10 temas con mayor tracción digital. Analiza la velocidad de propagación y el sentimiento para detectar oportunidades estratégicas en tiempo real.</p>
+            <p className="text-slate-500 text-sm font-medium italic">Monitor dinámico de los 10 temas con mayor tracción digital. Analiza la velocidad de propagación en tiempo real.</p>
           </div>
           <div className="grid gap-4">
             {sortedTrends.map((t, i) => (
