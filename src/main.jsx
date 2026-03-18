@@ -25,7 +25,7 @@ const FALLBACK_DATA = {
   ],
   roadmap: [
     { date: "Mar 18", event: "Actualización ZUPRAL", status: "Hoy", importance: "Alta" },
-    { date: "Mar 20", event: "Equinoccio Primavera", status: "Próximo", importance: "Baja" },
+    { date: "Mar 20", event: "Equinoccio", status: "Próximo", importance: "Baja" },
     { date: "Mar 22", event: "Día del Agua", status: "Próximo", importance: "Media" },
     { date: "Mar 25", event: "Cumbre IA", status: "Planificación", importance: "Alta" },
     { date: "Mar 29", event: "Semana Santa", status: "Planificación", importance: "Alta" },
@@ -88,7 +88,7 @@ function App() {
         <section className="space-y-8">
           <div className="px-4 border-l-4 border-orange-500">
             <h2 className="text-2xl font-black text-white flex items-center gap-3"><Flame className="text-orange-500" size={28}/> WAR ROOM FEED</h2>
-            <p className="text-slate-500 text-sm font-medium italic">Monitor dinámico de los 10 temas con mayor tracción digital.</p>
+            <p className="text-slate-500 text-sm font-medium italic">Monitor dinámico de los 10 temas con mayor tracción digital hoy.</p>
           </div>
           <div className="grid gap-4">
             {sortedTrends.map((t, i) => (
@@ -132,7 +132,7 @@ function App() {
       </main>
 
       <footer className="mt-20 py-16 border-t border-slate-900 text-center">
-        <p className="text-[10px] font-black text-slate-700 uppercase tracking-[0.5em]">ZUPRAL © 2026</p>
+        <p className="text-[10px] font-black text-slate-700 uppercase tracking-[0.6em]">ZUPRAL © 2026</p>
       </footer>
 
       <style dangerouslySetInnerHTML={{ __html: `
@@ -143,7 +143,5 @@ function App() {
   );
 }
 
-const container = document.getElementById('root');
-if (container) {
-  ReactDOM.createRoot(container).render(<React.StrictMode><App /></React.StrictMode>);
-}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<React.StrictMode><App /></React.StrictMode>);
