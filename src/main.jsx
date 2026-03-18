@@ -12,7 +12,7 @@ const CATEGORIAS = ["Todos", "Cultura", "Tech", "Cine", "Deportes", "Gaming"];
 
 const FALLBACK_DATA = {
   trends: [
-    { id: 1, title: "GTA VI: Vice City Live", category: "Gaming", velocity: 98, sentiment: "Euforia", emotionIcon: "🔥", whyViral: "Filtraciones masivas.", keywords: ["GTAVI"], description: "Ecosistema online.", sources: [{title: "IGN", url: "#"}] },
+    { id: 1, title: "GTA VI: Vice City Live", category: "Gaming", velocity: 98, sentiment: "Euforia", emotionIcon: "🔥", whyViral: "Filtraciones masivas sobre economía real.", keywords: ["GTAVI"], description: "Ecosistema online.", sources: [{title: "IGN", url: "#"}] },
     { id: 2, title: "Apple Vision Air", category: "Tech", velocity: 96, sentiment: "Asombro", emotionIcon: "✨", whyViral: "Precio disruptivo.", keywords: ["VisionAir"], description: "Computación espacial.", sources: [{title: "TechCrunch", url: "#"}] },
     { id: 3, title: "Mundial FIFA '26 Sedes", category: "Deportes", velocity: 92, sentiment: "Orgullo", emotionIcon: "⚽", whyViral: "Logística oficial.", keywords: ["FIFA"], description: "Impacto económico.", sources: [{title: "FIFA", url: "#"}] },
     { id: 4, title: "Dune: Messiah Teaser", category: "Cine", velocity: 89, sentiment: "Solemne", emotionIcon: "🎬", whyViral: "Imágenes de Villeneuve.", keywords: ["Dune"], description: "Épica sci-fi.", sources: [{title: "Variety", url: "#"}] },
@@ -81,7 +81,7 @@ function App() {
       <main className="max-w-7xl mx-auto space-y-20">
         <section className="flex gap-3 justify-center flex-wrap">
           {CATEGORIAS.map(cat => (
-            <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2 rounded-full text-xs font-black uppercase border transition-all ${filter === cat ? 'bg-cyan-500 border-cyan-500 text-slate-950 shadow-lg' : 'bg-slate-900/50 border-slate-800 text-slate-400 hover:border-slate-700'}`}>{cat}</button>
+            <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2 rounded-full text-xs font-black uppercase border transition-all ${filter === cat ? 'bg-cyan-500 border-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20' : 'bg-slate-900/50 border-slate-800 text-slate-400 hover:border-slate-700'}`}>{cat}</button>
           ))}
         </section>
 
@@ -143,5 +143,7 @@ function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<React.StrictMode><App /></React.StrictMode>);
+const container = document.getElementById('root');
+if (container) {
+  ReactDOM.createRoot(container).render(<React.StrictMode><App /></React.StrictMode>);
+}
